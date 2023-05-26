@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+body {background-color: #fff; color: #333; font-size: 14px; line-height: 1.5; font-family: '맑은 고딕', sans-serif;}
+
+.wrap{
+    display: flex;
+}
+
+.left {
+    width: 200px;
+    background-color: #ccc;
+}
+
+.logo {
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    margin: 0 auto;
+    display: block;
+}
+
+.right {
+    width: calc(100% - 200px);
+    background-color: #eee;
+}
+
+footer{
+    width: 100%;
+}
