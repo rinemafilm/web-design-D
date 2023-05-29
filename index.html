@@ -11,45 +11,43 @@
 <body>
     <div class="wrap">
         <div class="left">
-            <div class="logo"><a href="#"><img src="./images/logo.png" alt="조이컨트리클럽로고"></a></div>
-            <nav>
-                <ul class="gnb">
-                    <li>
-                        <a href="#">CLUB</a>
-                        <ul class="sub">
-                            <li><a href="#">클럽소개</a></li>
-                            <li><a href="#">시설안내</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">BOOKING</a>
-                        <ul class="sub">
-                            <li><a href="#">요금안내</a></li>
-                            <li><a href="#">예약안내</a></li>
-                            <li><a href="#">위약안내</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">INFOMATION </a>
-                        <ul class="sub">
-                            <li><a href="#">명예의 전당</a></li>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">자료실</a></li>
-                            <li><a href="#">포토갤러리</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">COMMUNITY</a>
-                        <ul class="sub">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">Q&A</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <div class="logo"><a href="#"><img src="./images/logo.png" alt=""></a></div>
+            <ul class="gnb">
+                <li>
+                    <a href="#">CLUB</a>
+                    <ul>
+                        <li><a href="#">클럽소개</a></li>
+                        <li><a href="#">시설안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">BOOKING</a>
+                    <ul>
+                        <li><a href="#">요금안내</a></li>
+                        <li><a href="#">예약안내</a></li>
+                        <li><a href="#">위약안내</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">INFORMATION</a>
+                    <ul>
+                        <li><a href="#">명예의 전당</a></li>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">자료실</a></li>
+                        <li><a href="#">포토갤러리</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COMMUNITY</a>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">Q&A</a></li>
+                    </ul>
+                </li>
+            </ul>
             <div class="member">
-                <a href="#">로그인</a>
                 <a href="#">회원가입</a>
+                <a href="#">로그인</a>
             </div>
         </div>
         <div class="right">
@@ -126,18 +124,26 @@
     </div>
 
     <script>
-        $('.gnb > li').hover(
-            function(){$(this).find('ul').stop().slideDown()},
-            function(){$(this).find('ul').stop().slideUp()}
-            )
+        // 메뉴
+        $('.gnb').hover(
+            function () {
+                var value = $(window).width() - 10
+                $(this).stop().animate({ width: value }, 'fast')
+            },
+            function () {
+                $(this).stop().animate({ width: 180 }, 'fast')
+            },
+        )
 
-        setInterval(function(){
-            $('.slide').animate({top:-400}, function(){
+        // 슬라이드
+        setInterval(function () {
+            $('.slide').animate({ top: -400 }, function () {
                 $('.slide div:first').appendTo('.slide')
-                $('.slide').css('top',0)
+                $('.slide').css('top', 0)
             })
         }, 3000)
 
+        // 탭
         $('.tab_title li').click(function(){
             $('.tab_title li').removeClass('active')
             $(this).addClass('active')
@@ -154,6 +160,7 @@
         $('.close').click(function(){
             $('.popup').hide()
         })
+
     </script>
 </body>
 </html>
